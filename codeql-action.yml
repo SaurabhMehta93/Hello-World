@@ -29,3 +29,10 @@ inputs:
 runs:
   using: 'node12'
   main: '../lib/upload-sarif-action.js'
+on:
+   push:
+      branches: [main, protected]
+   pull_request:
+      branches: [main]
+   schedule:
+      - cron: '20 14 * * 1'
